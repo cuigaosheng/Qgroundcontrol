@@ -261,6 +261,21 @@ bool UDPLink::_hardwareConnect()
         _registerZeroconf(_config->localPort(), kZeroconfRegistration);
         QObject::connect(_socket, &QUdpSocket::readyRead, this, &UDPLink::readBytes);
         emit connected();
+	QString goneHosts("192.168.43.1");
+		QHostAddress currentHost(goneHosts);
+		int port = 14550;
+		QByteArray str_test = "testtest";
+		_socket->writeDatagram(str_test, currentHost, (quint16)port);
+		_socket->writeDatagram(str_test, currentHost, (quint16)port);
+		_socket->writeDatagram(str_test, currentHost, (quint16)port);
+		_socket->writeDatagram(str_test, currentHost, (quint16)port);
+		_socket->writeDatagram(str_test, currentHost, (quint16)port);
+		_socket->writeDatagram(str_test, currentHost, (quint16)port);
+		_socket->writeDatagram(str_test, currentHost, (quint16)port);
+		_socket->writeDatagram(str_test, currentHost, (quint16)port);
+		_socket->writeDatagram(str_test, currentHost, (quint16)port);
+		_socket->writeDatagram(str_test, currentHost, (quint16)port);
+		
     } else {
         emit communicationError("UDP Link Error", "Error binding UDP port");
     }

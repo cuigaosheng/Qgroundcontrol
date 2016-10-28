@@ -1,4 +1,6 @@
 libs/lib/Frameworks/GStreamer.framework
+.gitignore
+*.patch
 *.swp
 *.nfs
 CMakeFiles
